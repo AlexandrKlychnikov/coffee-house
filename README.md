@@ -41,4 +41,9 @@ Training task react+typescript+sass
       '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
-
+16. For ability importing images as a modules there should be a react-app-env.d.ts file in your src folder.
+    with that code
+    declare module "*.png";
+    declare module "*.svg";
+    declare module "*.jpeg";
+    declare module "*.jpg";

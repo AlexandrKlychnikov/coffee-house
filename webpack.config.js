@@ -22,17 +22,17 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ["@babel/preset-react", "@babel/preset-env"],
+          },
+        },
       },
       {
-        test: /\.(png|jpg|jpeg|gif|ico)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg|ico)$/i,
         type: 'asset/resource',
       },
     ],
