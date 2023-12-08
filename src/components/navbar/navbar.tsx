@@ -4,7 +4,7 @@ import Logo from "@components/logo/logo";
 import cup from "@assets/icons/coffee-cup.svg";
 
 const Navbar = () => {
-  const menuItems = ["Favorite coffee", "About", "Mobile app", "Contact us"];
+  const menuItems = ["favorite coffee", "about", "mobile app", "contact us"];
   return (
     <div className="navbar">
       <Logo />
@@ -13,7 +13,7 @@ const Navbar = () => {
           {menuItems.map((item) => {
             return (
               <li>
-                <a href={"#" + item.split(" ")[0].toLowerCase()}>{item}</a>
+                <a href={"#" + item.split(" ").join("-")}>{item}</a>
               </li>
             );
           })}
