@@ -1,0 +1,42 @@
+@use '../favorite-coffee/favorite-coffee.sass'
+
+.about
+  @extend .favorite
+
+.about__heading
+  @extend .favorite__heading
+  text-align: start
+  .about__accent
+    @extend .favorite__accent
+
+.about__images
+  width: 100%
+  height: 1060px
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  gap: 40px
+
+.about__image
+  width: auto
+  border-radius: 20px
+  &.one, &.four
+    flex: 3 40%
+  &.one
+    background: url(@assets/images/about-1.jpg), lightgray 50% no-repeat
+  &.four
+    background: url(@assets/images/about-4.jpg), lightgray 50% no-repeat
+  &.two, &.three
+    flex: 2 30%
+  &.two
+    background: url(@assets/images/about-2.jpg), lightgray 50% no-repeat
+  &.three
+    background: url(@assets/images/about-3.jpg), lightgray 50% no-repeat
+  &.one, &.two, &.three, &.four
+    background-size: 110%
+    background-position: 52% 50%
+    &:hover
+      transition: 0.8s ease
+      background-size: 100%
+    &:not(:hover)
+      transition: 0.8s ease
