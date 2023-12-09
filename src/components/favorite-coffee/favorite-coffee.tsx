@@ -1,10 +1,23 @@
 import * as React from "react";
 import "./favorite-coffee.sass";
-import coffee_1 from "@assets/images/coffee-slider-1.png";
 import ArrowRight from "./arrow-right";
 import ArrowLeft from "./arrow-left";
+import SliderCard from "./slider-card";
+import { useState } from "react";
 
 const FavoriteCoffee = () => {
+  const sliderCards = ["9", "10", "11"];
+  const slides = ["one", "two", "three"];
+  const [index, setIndex] = useState(0);
+  const handleLeft = () => {
+    setIndex((state) => (state = state > 0 ? state - 1 : state));
+  };
+  const handleRight = () => {
+    setIndex((state) => (state = state < 2 ? state + 1 : state));
+  };
+  const handleControls = (newState: any) => {
+    setIndex((state) => (state = newState));
+  };
   return (
     <section className="favorite" id="favorite-coffee">
       <h2 className="favorite__heading">
@@ -12,28 +25,23 @@ const FavoriteCoffee = () => {
       </h2>
       <div className="favorite__slider-container">
         <div className="favorite__slider">
-          <ArrowLeft />
-          <div className="slide-container">
-            <div className="content-box">
-              <div className="slider-image">
-                <img src={coffee_1} alt="cup" />
-              </div>
-              <div className="description-box">
-                <h4>S’mores Frappuccino</h4>
-                <p className="description">
-                  This new drink takes an espresso and mixes it with brown sugar
-                  and cinnamon before being topped with oat milk.
-                </p>
-                <p className="price">$5.50</p>
-              </div>
+          <ArrowLeft func={handleLeft} state={index} />
+          <div className="slider-list">
+            <div className={`slider-track ${slides[index]}`}>
+              {sliderCards.map((card) => (
+                <SliderCard id={card} />
+              ))}
             </div>
           </div>
-          <ArrowRight />
+          <ArrowRight func={handleRight} state={index} />
         </div>
       </div>
       <div className="controls">
-        {["one", "two", "three"].map((num) => (
-          <div className={`control ${num} ${num === "one" && "active"}`}></div>
+        {["one", "two", "three"].map((num, i) => (
+          <div
+            className={`control ${slides[index] === num && "active"}`}
+            onClick={() => handleControls(i)}
+          ></div>
         ))}
       </div>
     </section>

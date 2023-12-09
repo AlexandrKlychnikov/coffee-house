@@ -16,6 +16,8 @@
     "jsx": "react",
     "strict": false,
     "moduleResolution":"node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "./src/**/*"

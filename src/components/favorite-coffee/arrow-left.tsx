@@ -1,8 +1,13 @@
 import * as React from "react";
 
-const ArrowLeft = () => {
+interface IArrowLeft {
+  func: () => void;
+  state: number;
+}
+
+const ArrowLeft = ({ func, state }: IArrowLeft) => {
   return (
-    <div className="arrow left">
+    <div className={`arrow left ${state === 0 && "disabled"}`} onClick={func}>
       <svg
         width="24"
         height="24"

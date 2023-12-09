@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const config = {
-  entry: './src/index.tsx',
+  entry: path.resolve(__dirname, "src" , "index.tsx"),
   devtool: 'source-map',
   module: {
     rules: [
