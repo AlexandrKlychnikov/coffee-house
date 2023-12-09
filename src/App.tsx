@@ -4,6 +4,7 @@ import "./App.sass";
 import FavoriteCoffee from "@components/favorite-coffee/favorite-coffee";
 import About from "@components/about/about";
 import MobileApp from "@components/mobile-app/mobile-app";
+import Footer from "@components/footer/footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <FavoriteCoffee />
       <About />
       <MobileApp />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,95 @@
+@use '@components/mobile-app/mobile-app.sass'
+
+.footer
+  display: flex
+  max-width: 1360px
+  padding: 100px
+  justify-content: flex-start
+  align-items: center
+  gap: 100px
+  align-self: stretch
+  border-radius: 40px
+  background-color: #665F55
+  color: #E1D4C9
+
+.footer__offer
+  @extend .mobile-app__offer
+  width: 530px
+
+.footer__heading
+  @extend .mobile-app__heading
+  color: #E1D4C9
+  .footer__accent
+    @extend .mobile-app__accent
+
+.socials-group
+  display: flex
+  gap: 12px
+
+.contacts-info
+  height: 186px
+  display: flex
+  flex-direction: column
+  gap: 40px
+
+.contacts__heading
+  font-size: 24px
+  font-weight: 600
+  line-height: 125%
+
+.contacts-box
+  @extend .contacts-info
+  height: 116px
+  gap: 20px
+  font-size: 16px
+  font-weight: 600
+  line-height: 150%
+
+.contact
+  width: fit-content
+  display: flex
+  align-items: flex-start
+  gap: 8px
+  position: relative
+  user-select: none
+  &:not(.working-hours)
+    cursor: pointer
+  &:not(.working-hours)::after
+    position: absolute
+    content: ''
+    left: 50%
+    transform: translateX(-50%)
+    bottom: -6px
+    display: block
+    width: 0
+    height: 2px
+    background: #E1D4C9
+    opacity: 0
+    transition: 0.7s
+  &:hover::after
+    opacity: 1
+    width: 100%
+
+.socials-group
+  cursor: pointer
+  a
+    display: inline-block
+    height: 60px
+    border-radius: 50%
+    background: #665F55
+  a:hover
+    transition: 0.8s ease
+    background: #E1D4C9
+    & svg path
+      transition: 0.8s ease
+      stroke: #665F55
+  a:not(:hover)
+    transition: 0.8s ease
+    background: #665F55
+    & svg path
+      transition: 0.8s ease
+      stroke: #E1D4C9
+
+a.contact, a.location
+  text-decoration: none
+  color: #E1D4C9
