@@ -3,6 +3,7 @@ import Header from "@components/header/header";
 import "./App.sass";
 import FavoriteCoffee from "@components/favorite-coffee/favorite-coffee";
 import About from "@components/about/about";
+import MobileApp from "@components/mobile-app/mobile-app";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <FavoriteCoffee />
       <About />
+      <MobileApp />
     </div>
   );
 }

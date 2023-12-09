@@ -1,0 +1,68 @@
+@use '@components/header/hero.sass'
+@use '@components/about/about.sass'
+
+.mobile-app
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 100px
+  color: #403F3D
+
+.mobile-app__offer
+  @extend .hero__offer
+  width: 630px
+  align-self: center
+
+.mobile-app__heading
+  @extend .about__heading
+  .mobile-app__accent
+    @extend .about__accent
+
+.mobile-app__screens
+  width: 630px
+  height: 630px
+  background: url('@assets/images/mobile-screens.png'), 50% / cover no-repeat
+
+.buttons-group
+  display: flex
+  gap: 20px
+
+.app-btn
+  box-sizing: border-box
+  display: flex
+  width: 200px
+  padding: 12px 20px
+  align-items: center
+  gap: 8px
+  border-radius: 100px
+  border: 1px solid #665F55
+  background-color: #E1D4C9
+  cursor: pointer
+  &:not(:hover)
+    transition: 1s
+    & .app-btn__text, & svg path
+      transition: 1s ease
+  &:hover
+    transition: background-color 1s ease
+    background-color: #665F55
+    & .app-btn__text
+      transition: color 1s ease
+      color: #E1D4C9
+    & svg path
+      transition: fill 1s ease
+      fill: #E1D4C9
+
+.app-btn__text
+  text-align: start
+  font-size: 10px
+  font-weight: 600
+  line-height: 140%
+  .app-btn__name
+    font-size: 16px
+    line-height: 150%
+
+.mobile-app__description
+  font-size: 16px
+  font-weight: 400
+  line-height: 150%
