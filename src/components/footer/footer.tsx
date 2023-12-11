@@ -9,7 +9,7 @@ import FacebookLink from "./facebook-link";
 
 const Footer = () => {
   return (
-    <footer className="footer" id="contacts">
+    <footer className="footer" id="contact-us">
       <div className="footer__offer">
         <h2 className="footer__heading">
           Sip, Savor, Smile.

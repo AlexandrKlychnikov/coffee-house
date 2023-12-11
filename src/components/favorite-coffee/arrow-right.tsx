@@ -18,8 +18,8 @@ const ArrowRight = ({ func, state }: IArrowRight) => {
         <path
           d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18"
           stroke="#403F3D"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </div>

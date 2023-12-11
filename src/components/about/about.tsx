@@ -14,7 +14,7 @@ const About = () => {
       </h2>
       <div className="about__images">
         {["one", "two", "three", "four"].map((img) => (
-          <div className={`about__image ${img}`}></div>
+          <div className={`about__image ${img}`} key={img}></div>
         ))}
       </div>
     </section>

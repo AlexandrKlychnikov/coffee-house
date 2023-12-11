@@ -29,7 +29,7 @@ const FavoriteCoffee = () => {
           <div className="slider-list">
             <div className={`slider-track ${slides[index]}`}>
               {sliderCards.map((card) => (
-                <SliderCard id={card} />
+                <SliderCard id={card} key={card} />
               ))}
             </div>
           </div>
@@ -41,6 +41,7 @@ const FavoriteCoffee = () => {
           <div
             className={`control ${slides[index] === num && "active"}`}
             onClick={() => handleControls(i)}
+            key={num}
           ></div>
         ))}
       </div>

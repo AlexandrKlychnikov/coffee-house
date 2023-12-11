@@ -5,7 +5,7 @@ import AppStoreButton from "./app-store";
 
 const MobileApp = () => {
   return (
-    <section className="mobile-app" id="mobile">
+    <section className="mobile-app" id="mobile-app">
       <div className="mobile-app__offer">
         <h2 className="mobile-app__heading">
           <span className="mobile-app__accent">Download</span> our apps to start
