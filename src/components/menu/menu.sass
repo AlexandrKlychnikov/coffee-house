@@ -1,0 +1,150 @@
+@use '@components/favorite-coffee/favorite-coffee.sass'
+
+.coffee-menu__offer
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 40px
+  margin-top: 0px
+
+.coffee-menu__heading
+  @extend .favorite__heading
+  width: 800px
+  .coffee-menu__accent
+    @extend .favorite__accent
+
+.tabs
+  display: flex
+  gap: 15px
+
+.tabs__link
+  text-decoration: none
+  display: flex
+  height: 46px
+  box-sizing: border-box
+  padding: 8px 16px 8px 8px
+  justify-content: center
+  align-items: center
+  gap: 8px
+  border-radius: 100px
+  border: 1px solid #C1B6AD
+  &.active
+    cursor: default
+    background: #665F55
+    .tab-pic
+      background: #E1D4C9
+    .tab-text
+      color: #E1D4C9
+  &:hover:not(.active)
+    cursor: pointer
+    transition: 1s ease
+    background: #665F55
+    .tab-pic
+      transition: 1s ease
+      background: #E1D4C9
+    .tab-text
+      transition: 1s ease
+      color: #E1D4C9
+  &:not(:hover, .active)
+    transition: 1s ease
+    .tab-pic
+      transition: 1s ease
+    .tab-text
+      transition: 1s ease
+
+.tab-pic
+  display: flex
+  width: 30px
+  height: 30px
+  justify-content: center
+  align-items: center
+  border-radius: 100px
+  background: #C1B6AD
+
+.tab-text
+  color: #403F3D
+  font-size: 16px
+  font-weight: 600
+  line-height: 150%
+
+.main
+  display: flex
+  flex-direction: column
+  gap: 40px
+
+.coffe-menu__link.active
+  cursor: default
+  & ::after
+    position: absolute
+    content: ''
+    left: 50%
+    transform: translateX(-50%)
+    bottom: -4px
+    display: block
+    height: 2px
+    background: #403F3D
+    opacity: 1
+    width: 100%
+
+.coffee-menu__container
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: repeat(2, 1fr)
+  gap: 40px
+
+.card
+  box-sizing: border-box
+  display: flex
+  width: 310px
+  height: 506px
+  flex-direction: column
+  align-items: center
+  border-radius: 40px
+  border: 1px solid #C1B6AD
+  cursor: pointer
+  &:hover .card__image
+    transition: 0.8s ease
+    background-size: 100%
+  &:not(:hover) .card__image
+    transition: 0.8s ease
+
+.card__image
+  width: 310px
+  height: 310px
+  border-radius: 40px
+  @for $i from 1 through 8
+    $var: '.coffee-' + $i
+    &#{$var}
+      background: url(@assets/images/menu/img-#{$i}.png), no-repeat
+      background-size: 110%
+      background-position: 52% 50%
+
+.card__description
+  display: flex
+  padding: 20px
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+  gap: 12px
+  flex: 1 0 0
+  color:#403F3D
+  align-self: stretch
+
+.card__menu-item__name
+  font-size: 24px
+  font-weight: 600
+  line-height: 125%
+
+.card__menu-item__description
+  font-size: 16px
+  font-weight: 400
+  line-height: 150%
+
+.card__menu-item__price
+  margin-top: auto
+  font-size: 24px
+  font-weight: 600
+  line-height: 125%
+
+.logo-link
+  text-decoration: none

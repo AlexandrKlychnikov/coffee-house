@@ -1,7 +1,8 @@
+import Menu from "@components/menu/menu";
 import React from "react";
 
 const CoffeeMenu = () => {
-  return <h2>Coffee</h2>;
+  return <Menu />;
 };
 
 export default CoffeeMenu;

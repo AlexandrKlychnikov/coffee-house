@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "./header.sass";
 import Navbar from "@components/navbar/navbar";
 

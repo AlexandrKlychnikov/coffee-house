@@ -2,13 +2,15 @@ import * as React from "react";
 import "./navbar.sass";
 import Logo from "@components/logo/logo";
 import cup from "@assets/icons/coffee-cup.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import ScrollToAnchor from "@utils/ScrollToAnchor";
 
 const Navbar = () => {
   const menuItems = ["favorite coffee", "about", "mobile app", "contact us"];
-
+  const location = useLocation();
   return (
     <div className="navbar">
+      <ScrollToAnchor />
       <Link className="logo-link" to="/">
         <Logo />
       </Link>
@@ -21,7 +23,7 @@ const Navbar = () => {
                   to={
                     item !== "contact us"
                       ? `./#${item.split(" ").join("-")}`
-                      : "#contact-us"
+                      : `#contact-us`
                   }
                 >
                   {item}
@@ -32,7 +34,12 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className="coffee-menu">
-        <Link className="coffe-menu__link" to="./menu">
+        <Link
+          className={`coffe-menu__link ${
+            location.pathname.slice(1) === "menu" && "active"
+          }`}
+          to="./menu"
+        >
           <span>Menu</span>
           <img src={cup} alt="cup icon" />
         </Link>
