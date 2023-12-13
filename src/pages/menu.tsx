@@ -1,14 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./layout";
-import CoffeeMenu from "./coffee-menu";
+import CoffeeMenu from "@components/coffee-menu/menu";
+import ScrollToAnchor from "@utils/ScrollToAnchor";
 
 const Menu = () => {
   return (
-    <Routes>
-      <Route path="/menu" element={<Layout />} />
-      <Route index element={<CoffeeMenu />} />
-    </Routes>
+    <>
+      <ScrollToAnchor />
+      <CoffeeMenu />
+    </>
   );
 };
 
